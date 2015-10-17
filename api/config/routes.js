@@ -12,7 +12,7 @@ router.route('/posts')
 router.route('/posts/:id')
   .get(postsCtrl.readPost)
   .put(postsCtrl.updatePost)
-//   .delete(postsCtrl.destroyPost);
+  .delete(postsCtrl.destroyPost);
 
 // export routes
 module.exports = router;

@@ -28,7 +28,6 @@ function readPost(req, res){
 }
 // UPDATE
 function updatePost(req, res){
-  console.log('updatePost')
   var id = req.params.id;
   Post.findById({_id: id}, function(err, post) {
     if (err) res.json({messsage: '!! Can\'t find the post you\'re trying to edit:' + error});
@@ -43,7 +42,11 @@ function updatePost(req, res){
 }
 // DELETE
 function destroyPost(req, res){
-  console.log('destroyPost')
+  var id = req.params.id;
+  Post.remove({_id: id}, function(err, post) {
+    if (err) res.json({messsage: '!! Can\'t remove that post:' + error});
+    res.status(200).send(post);
+  })
 }
 
 // exports object. 
