@@ -9,8 +9,8 @@ var postsCtrl = require('../controllers/postsController')
 router.route('/posts')
   .get(postsCtrl.indexPost)
   .post(postsCtrl.createPost);
-// router.route('/posts/:id')
-//   .get(postsCtrl.readPost)
+router.route('/posts/:id')
+  .get(postsCtrl.readPost)
 //   .put(postsCtrl.updatePost)
 //   .delete(postsCtrl.destroyPost);
 
