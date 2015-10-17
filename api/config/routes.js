@@ -11,7 +11,7 @@ router.route('/posts')
   .post(postsCtrl.createPost);
 router.route('/posts/:id')
   .get(postsCtrl.readPost)
-//   .put(postsCtrl.updatePost)
+  .put(postsCtrl.updatePost)
 //   .delete(postsCtrl.destroyPost);
 
 // export routes

@@ -20,7 +20,6 @@ function createPost(req, res){
 }
 // SHOW
 function readPost(req, res){
-  console.log('readPost')
   var id = req.params.id;
   Post.findById({_id: id}, function(err, post) {
     if (err) res.json({messsage: '!! Can\'t find the post you\'re after:' + error});
@@ -30,6 +29,17 @@ function readPost(req, res){
 // UPDATE
 function updatePost(req, res){
   console.log('updatePost')
+  var id = req.params.id;
+  Post.findById({_id: id}, function(err, post) {
+    if (err) res.json({messsage: '!! Can\'t find the post you\'re trying to edit:' + error});
+    if (req.body.author) post.author = req.body.author;
+    if (req.body.content) post.content = req.body.content;
+  // above are oneliners determining what needs updating, below saves this to the DB.
+    post.save(function(err) {
+      if (err) res.json({messsage: '!! Can\'t edit post:' + error});
+      res.status(200).send(post)
+    })
+  })
 }
 // DELETE
 function destroyPost(req, res){
