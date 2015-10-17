@@ -21,7 +21,11 @@ function createPost(req, res){
 // SHOW
 function readPost(req, res){
   console.log('readPost')
-  console.log(req.params.id)
+  var id = req.params.id;
+  Post.findById({_id: id}, function(err, post) {
+    if (err) res.json({messsage: '!! Can\'t find the post you\'re after:' + error});
+    res.status(200).send(post);
+  })
 }
 // UPDATE
 function updatePost(req, res){
