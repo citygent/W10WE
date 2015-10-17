@@ -8,7 +8,7 @@ var postsCtrl = require('../controllers/postsController')
 // 'Post' Routing:
 router.route('/posts')
   .get(postsCtrl.indexPost)
-  // .post(postsCtrl.createPost);
+  .post(postsCtrl.createPost);
 // router.route('/posts/:id')
 //   .get(postsCtrl.readPost)
 //   .put(postsCtrl.updatePost)

@@ -3,12 +3,15 @@ var app      = express();
 var port     = process.env.PORT || 3000;
 var logger   = require('morgan');
 var mongoose = require('mongoose');
+var bodyParser = require('body-parser');
 
 // DB Connection
 mongoose.connect('mongodb://localhost:27017/i-like-angular-js');
 
 // Middleware shiz
 app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routing config
 var routes = require('./config/routes');
