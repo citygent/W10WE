@@ -11,10 +11,30 @@
 </head>
 <body ng-controller="PhatController as ctrl">
 
-  <header>
-    <h1 class="header"><a href="/">I L I K E A N G U L A R</a>
-    <div class="tagline">(WDI-)developers Angular.JS musings</div></h1>
-  </header>
+<header>
+
+  <nav>
+    <div class="view-menu">
+      <a href="#" id="filter-by">View &#9662;</a>
+      <ul>
+        <li><a href="#">Top</a></li>
+        <li><a href="#">New</a></li>
+        <li><a href="#">Best</a></li>
+        <li><a href="#">Digest</a></li>
+        <li><a href="#">Daily</a></li>
+      </ul>
+    </div>
+    <div class="search">
+
+    </div>
+  </nav>
+
+  <div class="header">
+    <h1><a href="/">I L I K E A N G U L A R</a></h1>
+    <p class="tagline">(WDI-)developers Angular.JS musings</p>
+  </div>
+
+</header>
 
   <ul>
       <li ng-repeat='post in ctrl.posts'>
