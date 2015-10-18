@@ -2,7 +2,12 @@ var mongoose = require('mongoose');
 
 var postSchema = new mongoose.Schema({
   author: String,
-  content: String
+  authorAvatar: String,
+  content: String,
+  thumb: String,
+  upvotes: Number,
+  time: { type: Date, 
+       default: Date.now }
 });
 
 //Export Schema

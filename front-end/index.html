@@ -8,9 +8,6 @@
   <script src="./js/app.js"></script>
   <script src="./js/controller.js"></script>
   <link rel="stylesheet" type="text/css" href="./css/allthestyling.css">
-  <!-- load momentJS and MomentJS for Angular -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular-moment/0.9.0/angular-moment.min.js"></script>
 </head>
 <body ng-controller="PhatController as ctrl">
 <header>
@@ -41,9 +38,9 @@
     <div class="post" ng-repeat="post in ctrl.posts">
       <div class="post-upvote"></div>
       <div class="post-content">
-        <img src="{{ post.thumb}}" class="post-thumb">
+        <img src="{{ post.thumb }}" class="post-thumb">
         <h3 class="post-heading">{{ post.content | limitTo: 42 }}</h3>
-        <p class="post-info"><strong>{{ post.author}}</strong> {{ post.upvotes }} {{ post.timeago }} </p>
+        <p class="post-info"><strong>{{ post.author}}</strong> {{ post.upvotes }} {{ post.time }} </p>
       </div>
       <div class="avatar"><img src="{{ post.authorAvatar }}"></div>
     </div>
