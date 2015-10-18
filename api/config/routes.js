@@ -1,6 +1,6 @@
 var express        = require('express');
 var router         = express.Router()
-var methodOverride = require('method-override'); //just in case.
+var methodOverride = require('method-override'); 
 
 // controller requires
 var postsCtrl = require('../controllers/postsController')
