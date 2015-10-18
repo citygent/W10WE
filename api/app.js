@@ -13,7 +13,7 @@ mongoose.connect('mongodb://localhost:27017/i-like-angular-js');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors()); // so we need this even though same computer :S
 
 // Routing config
 var routes = require('./config/routes');

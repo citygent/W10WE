@@ -7,12 +7,17 @@
   <script src="./js/angular-resource.js"></script>
   <script src="./js/app.js"></script>
   <script src="./js/controller.js"></script>
-  <!-- WILL I HAVE TIME FOR CSS?! -->
+  <link rel="stylesheet" type="text/css" href="./css/allthestyling.css">
 </head>
 <body ng-controller="PhatController as ctrl">
+
+  <header>
+    <h1 class="header"><a href="/">I L I K E A N G U L A R</a>
+    <div class="tagline">(WDI-)developers Angular.JS musings</div></h1>
+  </header>
+
   <ul>
       <li ng-repeat='post in ctrl.posts'>
-        
         {{ post.author}} said <span>{{post.content}}</span>
       </li>
     </ul>
